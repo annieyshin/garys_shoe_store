@@ -16,6 +16,11 @@ require 'spec_helper'
       expect(brand.shoe_name()).to(eq("Shoe wizard"))
     end
 
+    it("converts the brand shoe price to currency") do
+      brand = Brand.create({:price => "50"})
+      expect(brand.price()).to(eq("$50.00"))
+    end
+
     it { should have_many(:stores)}
 
     it { should validate_uniqueness_of(:shoe_name)}
