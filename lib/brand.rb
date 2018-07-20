@@ -1,3 +1,6 @@
-class Store < ActiveRecord::Base
-  has_and_belongs_to_many :shoes
+class Brand < ActiveRecord::Base
+  has_many :brand_stores
+  has_many :stores, through: :brand_stores
+
+  validates :name, uniqueness: true
 end
