@@ -1,10 +1,10 @@
-<h2><%= @brand.name %></h2>
+<h2><%= @brand.shoe_name %></h2>
 
 <table class="table">
   <p class="table_header">Store Index</p>
   <tr>
     <% @brands.brands.each() do |brand|%>
-    <td><%= brand.name%></td>
+    <td><%= brand.shoe_name%></td>
     <% end %>
   </tr>
 </table>
