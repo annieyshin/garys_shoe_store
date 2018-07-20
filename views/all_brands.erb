@@ -1,15 +1,15 @@
-<h2><%= @store.name %></h2>
+<h2><%= @brand.name %></h2>
 
 <table class="table">
   <p class="table_header">Store Index</p>
   <tr>
-    <% @store.brands.each() do |brand|%>
+    <% @brands.brands.each() do |brand|%>
     <td><%= brand.name%></td>
     <% end %>
   </tr>
 </table>
 <br>
-<a href="/stores/<%= @store.id %>/edit"><span class="btn btn-primary">Edit</span></a>
+<a href="/brands/<%= @brand.id %>/edit"><span class="btn btn-primary">Edit</span></a>
 <br>
 <br>
 <form class="form-inline" method="get" action="/">
