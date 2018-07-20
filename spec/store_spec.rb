@@ -11,6 +11,11 @@ describe(Store) do
     expect(store.save()).to(eq(false))
   end
 
+  it("converts the store name to capitalize") do
+    store = Store.create({:name => "shoe wiZards of the coast"})
+    expect(store.name()).to(eq("Shoe wizards of the coast"))
+  end
+
   it { should have_many(:brands)}
 
   it { should validate_uniqueness_of(:name)}
