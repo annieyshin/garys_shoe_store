@@ -3,5 +3,6 @@ class Brand < ActiveRecord::Base
   has_many :stores, through: :brand_stores
   validates(:shoe_name, :presence => true)
   validates :shoe_name, uniqueness: true
+  validates(:shoe_name, {:presence => true, :length => { :maximum => 100 }})
 
 end
