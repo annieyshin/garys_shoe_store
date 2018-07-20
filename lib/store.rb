@@ -3,4 +3,5 @@ class Store < ActiveRecord::Base
   has_many :brands, through: :brand_stores
 
   validates :name, uniqueness: true
+  validates(:name, :presence => true)
 end
