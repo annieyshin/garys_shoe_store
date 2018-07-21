@@ -20,7 +20,7 @@ RSpec.configure do |config|
       brand.destroy()
     end
     BrandStore.all.each do |brand_store|
-      brand_store.destroy()
-    end
+     brand_stores.destroy()
+   end
   end
 end

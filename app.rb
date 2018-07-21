@@ -28,7 +28,7 @@ end
 
 post('/brands/new') do
   shoe_name = params.fetch('shoe_name')
-  new_brand = Brand.create({:shoe_name => new_brand})
+  Brand.create({:shoe_name => shoe_name})
   redirect back
 end
 

@@ -1,6 +1,9 @@
 require 'spec_helper'
 
   describe(Brand) do
+
+    it { should have_many(:stores)}
+
     it("validates presence of shoe name") do
     brand = Brand.new({:shoe_name => ""})
     expect(brand.save()).to(eq(false))
@@ -15,13 +18,6 @@ require 'spec_helper'
       brand = Brand.create({:shoe_name => "shoe wiZard"})
       expect(brand.shoe_name()).to(eq("Shoe wizard"))
     end
-
-    it("converts the brand shoe price to currency") do
-      brand = Brand.create({:price => "50"})
-      expect(brand.price()).to(eq("$50.00"))
-    end
-
-    it { should have_many(:stores)}
 
     it { should validate_uniqueness_of(:shoe_name)}
 

@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe(Store) do
+
+  it { should have_many(:brands)}
+
   it("validates presence of store name") do
   store = Store.new({:name => ""})
   expect(store.save()).to(eq(false))
@@ -15,8 +18,6 @@ describe(Store) do
     store = Store.create({:name => "shoe wiZards of the coast"})
     expect(store.name()).to(eq("Shoe wizards of the coast"))
   end
-
-  it { should have_many(:brands)}
 
   it { should validate_uniqueness_of(:name)}
 
