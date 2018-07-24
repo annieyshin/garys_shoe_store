@@ -22,3 +22,11 @@ end
       brand = Brand.create({:price => "50"})
       expect(brand.price()).to(eq("$50.00"))
     end
+
+TAKE FROM STORE_SPEC.RB
+
+      it { should have_many(:brands)}
+
+      TAKE FROM BRAND_SPEC.RB
+
+      it { should have_many(:stores)}
