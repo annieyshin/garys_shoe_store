@@ -1,6 +1,6 @@
 # Gary's Shoe Store
 
-#### Epicodus: Ruby Lesson: July 20th, 2018
+#### Epicodus: Ruby Lesson: July 20th, 2018 Week Four Project
 
 #### Annie Shin
 
