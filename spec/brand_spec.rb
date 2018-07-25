@@ -2,9 +2,6 @@ require 'spec_helper'
 
   describe(Brand) do
 
-    it { should have_many(:stores) }
-
-
     it("validates presence of shoe name") do
     brand = Brand.new({:shoe_name => ""})
     expect(brand.save()).to(eq(false))

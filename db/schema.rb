@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2018_07_20_201049) do
   end
 
   create_table "brands_stores", force: :cascade do |t|
-    t.integer "name_id"
-    t.integer "shoe_name_id"
+    t.integer "brand_id"
+    t.integer "store_id"
   end
 
   create_table "stores", force: :cascade do |t|
