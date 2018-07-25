@@ -1,86 +1,20 @@
 <h2>Edit <%= @store.name %></h2>
-
+<br>
 <table class="table">
-  <p class="table_header">Shoe Brand Name</p>
+  <% @store.brands.each do |brand|%>
   <tr>
-    <% @store.store_brands.each() do |ingredient|%>
-    <td><%= ingredient.ingredient_id%></td>
-    <% end %>
+    <td><%= brand.shoe_name %></td>
+    <td><%= brand.price %></td>
   </tr>
-  <tr>
-    <% @store.ingredients.each() do |ingredient|%>
-    <td><%= ingredient.name%></td>
-    <% end %>
-  </tr>
-  <tr>
-    <% @store.store_ingredients.each() do |ingredient|%>
-    <td><%= ingredient.amount%></td>
-    <% end %>
-  </tr>
-  <tr>
-    <% @store.store_ingredients.each() do |ingredient|%>
-    <td><%= ingredient.unit%></td>
-    <% end %>
-  </tr>
+  <% end %>
 </table>
 
-<h2>Instructions</h2>
-    <%= @store.instruction %>
-
-<form action="/stores/<%= @store.id %>/edit" method="post">
-  <label for="instruction">Add Instructions</label>
-  <input type="text" name="instruction" class="form-control">
-  <br>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-<form action="/stores/<%= @store.id %>/edit" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <br>
-  <p class="ingredient">Add Ingredient</p>
-  <div class="form-group">
-    <label for="ingredient">Ingredient:</label>
-    <select name="ingredient">
-      <% @ingredients.each do |ingredient| %>
-      <option value="<%= ingredient.id %>"><%=ingredient.name %></option>
-      <% end %>
-    </select>
-    <label for="amount">Amount:</label>
-    <input type="text" name="amount">
-    <label for="unit">Unit:</label>
-    <input type="text" name="unit">
-  </div>
-  <button type="submit" class="btn btn-info">Add</button>
-</form>
 <br>
-<br>
-<form action="/stores/ingredients/new" method="post">
-  <label for="new_ingredient_name">Add a new ingredient</label>
-  <input type="text" name="new_ingredient_name" class="form-control">
-  <br>
-  <button type="submit" name="button">Add</button>
+<form action="/stores/<%= @store.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" class="btn btn-danger">Delete Project</button>
 </form>
-<br>
-<p>Pick a category</p>
-<form action="/categories/add" method="post">
-  <input type="hidden" name="store_id" value="<%= @store.id %>">
-  <select name="category_id">
-    <% @categories.each do |category| %>
-    <option value="<%= category.id %>"><%= category.name %></option>
-    <% end %>
-  </select>
-  <br>
-  <br>
-  <button type="submit" name="button">Add</button>
-</form>
-
 <br>
 <form class="form-inline" method="get" action="/">
   <button type="submit" class="btn btn-danger" name="clear_btn">Home</button>
-</form>
-<br>
-<br>
-<form action="/stores/<%= @store.id %>/edit" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button type="submit" name="button">Delete</button>
 </form>

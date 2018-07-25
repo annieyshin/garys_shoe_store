@@ -50,3 +50,23 @@ post('/stores/new') do
   @stores = Store.all
   erb(:stores)
 end
+
+get('/stores/:id') do
+  id = params.fetch(:id)
+  @store = Store.find(id)
+  erb(:store_edit)
+end
+
+patch('/stores/:id') do
+  id = params.fetch(:id)
+  @project = Project.find(params.fetch("id").to_i())
+  @project.update({:title => title})
+  redirect("/")
+end
+
+delete('/stores/:id') do
+  @store = Store.find(params.fetch("id").to_i())
+  @store.delete()
+  @stores = Store.all()
+  redirect("/stores")
+end
