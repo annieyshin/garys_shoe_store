@@ -1,0 +1,16 @@
+<h2><%= @brand.shoe_name %></h2>
+<br>
+<br>
+<form action="/brands/<%= @brand.id %>/edit" method="post">
+  <input type="hidden" name="brand_id" value="<%= @brand.id %>">
+  <p>Add to Gary's Shoe Store Location</p>
+  <div class="form-group">
+    <label for="shoe_store">Gary's Shoe Store Locations:</label>
+    <select name="shoe_store">
+      <% @stores.each do |store| %>
+      <option value="<%= store.id %>"><%=store.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-info">Add</button>
+</form>

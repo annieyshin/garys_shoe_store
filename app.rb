@@ -33,6 +33,22 @@ post('/brands/new') do
   redirect back
 end
 
+get('/brands/:id') do
+  id = params.fetch(:id)
+  @brand = Brand.find(id)
+  @stores = Store.all
+  erb(:brand_edit)
+end
+
+post('/brands/:id/edit') do
+  brand_id = params.fetch('brand_id').to_i
+  shoe_store = params.fetch('shoe_store').to_i
+  @brand = Brand.find(brand_id)
+  store = Store.find(shoe_store)
+  @brand.stores.push(store)
+  @stores = Store.all
+  redirect("/")
+end
 
 get('/stores') do
   @stores = Store.all

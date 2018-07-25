@@ -17,7 +17,7 @@
 <table>
   <% @brands.each do |brand|%>
   <tr>
-    <td><%= brand.shoe_name %></td>
+    <td><a href="/brands/<%= brand.id %>"><%= brand.shoe_name %></a></td>
     <td><%= brand.price %></td>
   </tr>
   <% end %>
