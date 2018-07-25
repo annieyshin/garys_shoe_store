@@ -58,9 +58,9 @@ get('/stores/:id') do
 end
 
 patch('/stores/:id') do
-  id = params.fetch(:id)
-  @project = Project.find(params.fetch("id").to_i())
-  @project.update({:title => title})
+  name = params.fetch("name")
+  @store = Store.find(params.fetch("id").to_i())
+  @store.update({:name => name})
   redirect("/")
 end
 
