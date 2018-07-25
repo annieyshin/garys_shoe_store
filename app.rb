@@ -6,7 +6,6 @@ require('pry')
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get('/') do
-  binding.pry
   erb(:index)
 end
 
@@ -42,4 +41,11 @@ end
 get('/stores/new') do
   @stores = Store.all
   erb(:store_form)
+end
+
+post('/stores/new') do
+  name = params.fetch('name')
+  @store = Store.create({:name => name})
+  @stores = Store.all
+  erb(:stores)
 end

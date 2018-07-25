@@ -1,1 +1,18 @@
-<h2> hello </h2>
+<h2>Add a new shoe store</h2>
+
+<form action="/stores/new" method="post">
+  <label for="name">Shoe Store Name</label>
+  <input type="text" name="name">
+  <button class="btn btn-warning" type="submit" name="add_button">Add!</button>
+</form>
+
+<ul>
+  <% @stores.each do |store|%>
+  <li><%= store.name %></li>
+  <% end %>
+</ul>
+
+<br>
+<form class="form-inline" method="get" action="/">
+  <button type="submit" class="btn btn-danger" name="clear_btn">Back</button>
+</form>
