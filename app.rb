@@ -28,7 +28,8 @@ end
 
 post('/brands/new') do
   shoe_name = params.fetch('shoe_name')
-  Brand.create({:shoe_name => shoe_name})
+  price = params.fetch('price').to_i
+  Brand.create({:shoe_name => shoe_name, :price => price})
   redirect back
 end
 

@@ -1,4 +1,4 @@
-col-md-6 {
+.col-md-6 {
   text-align: center;
   margin: 0 auto;
 }
@@ -6,4 +6,12 @@ col-md-6 {
 .jumbotron {
   background-color: red;
   color: white;
+}
+
+td {
+  border: 3px solid orange;
+}
+
+tr {
+  border: 3px solid orange;
 }
