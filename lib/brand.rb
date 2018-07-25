@@ -6,12 +6,12 @@ class Brand < ActiveRecord::Base
   before_save(:capitalize_shoe_name)
 
 
-  private
+  def display_price
+    "$#{self.price.to_s.gsub(/\d(?=(...)+$)/, '\0,')}"
+  end
 
+  private
     def capitalize_shoe_name
       self.shoe_name=(shoe_name().capitalize())
     end
-
-
-
   end
