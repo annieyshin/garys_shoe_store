@@ -6,6 +6,8 @@
 .jumbotron {
   background-color: red;
   color: white;
+  height: 400px;
+  font-size: 42pt;
 }
 
 td {
@@ -24,4 +26,10 @@ body {
 
 .container {
   width: 80%;
+}
+
+img {
+    height: 320px;
+    float: right;
+    padding: 5px;
 }

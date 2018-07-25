@@ -5,14 +5,17 @@
     <title>Gary's Shoe Store</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="<%= url("/styles.css")%>" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="/bundy.png">
   </head>
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h4>Gary's Shoes</h4>
-        <h5>1016 W. Chicago Ave.</h5>
-        <h5>Chicago, IL., 606051</h5>
-        <h5>Ph: (773) 234 - 0298</h5>
+        <img src="/bundy.png" alt="Al cring at garys">
+        <h2>Gary's Shoes</h2>
+        <h4>1016 W. Chicago Ave.</h4>
+        <h4>Chicago, IL., 606051</h4>
+        <h4>Ph: (773) 234 - 0298</h4>
+        <h4><em>Contact: Al Bundy</em></h4>
       </div>
           <%= yield %>
     </div>
