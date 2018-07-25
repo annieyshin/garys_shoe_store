@@ -10,6 +10,10 @@
   font-size: 42pt;
 }
 
+table {
+  width: 60%;
+}
+
 td {
   border: 1px solid orange;
   padding: 8px;
@@ -26,6 +30,7 @@ body {
 
 .container {
   width: 80%;
+  font-size: 22pt;
 }
 
 img {
